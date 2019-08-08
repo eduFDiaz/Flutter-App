@@ -12,7 +12,7 @@ class Products extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Image.network(
-                      'https://picsum.photos/300/200',
+                      'https://picsum.photos/300/200/?random&t=' + new DateTime.now().toString(),
                     ),
                     Text(element),
                   ],

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
               title: Text("EasyList"),
             ),
             body: ListView(
-              children: [ProductsManager()],
+              children: [ProductsManager(DateTime.now().toString())],
             )));
   }
 }
