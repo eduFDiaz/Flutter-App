@@ -26,7 +26,7 @@ class _ProductsManagerState extends State<ProductsManager> {
         Container(
           margin: EdgeInsets.all(5.0),
           child: RaisedButton(
-            color: Color.fromARGB(0, 0, 0, 250),
+            color: Theme.of(context).primaryColor,
             onPressed: () {
               setState(() {
                 _products.add(DateTime.now().toString());
