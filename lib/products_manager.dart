@@ -1,3 +1,4 @@
+import 'package:first_app/product_control.dart';
 import 'package:flutter/material.dart';
 import './products.dart';
 
@@ -14,6 +15,12 @@ class ProductsManager extends StatefulWidget {
 class _ProductsManagerState extends State<ProductsManager> {
   List<String> _products = [];
 
+  void _addProduct(String product){
+    setState(() {
+     _products.add(product);
+    });
+  }
+
   @override
   void initState() {//We add the value passed from
     _products.add(widget.startingProduct);//the parent
@@ -25,15 +32,8 @@ class _ProductsManagerState extends State<ProductsManager> {
       children: [
         Container(
           margin: EdgeInsets.all(5.0),
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              setState(() {
-                _products.add(DateTime.now().toString());
-              });
-            },
-            child: Text("Add Picture"),
-          ),
+          child: ProductControl(_addProduct)//this is a reference to a function
+          // so we can pass date from the child ProductControl
         ),
         Products(_products)
       ],
