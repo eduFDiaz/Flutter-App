@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: Text("List of Pictures"),
             ),
-            body: ProductsManager(DateTime.now().toString()),
+            body: ProductsManager(),
             ));
   }
 }

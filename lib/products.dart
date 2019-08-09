@@ -21,23 +21,12 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: _buildProductItem,
-      itemCount: products.length,
-    );
+    //Conditional rendering
+    return products.length > 0
+        ? ListView.builder(
+            itemBuilder: _buildProductItem,
+            itemCount: products.length,
+          )
+        : Center(child: Text("No images in the list"));
   }
 }
-/* return ListView(
-      children: products
-          .map((element) => Card(
-                child: Column(
-                  children: <Widget>[
-                    Image.network(
-                      'https://picsum.photos/300/200/?random&t=' + new DateTime.now().toString(),
-                    ),
-                    Text(element),
-                  ],
-                ),
-              ))
-          .toList(),
-    ); */
