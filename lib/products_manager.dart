@@ -35,7 +35,7 @@ class _ProductsManagerState extends State<ProductsManager> {
           child: ProductControl(_addProduct)//this is a reference to a function
           // so we can pass date from the child ProductControl
         ),
-        Products(_products)
+        Expanded(child: Products(_products))//Allows the ListView in products to get all the height
       ],
     );
   }
