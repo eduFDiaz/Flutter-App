@@ -19,14 +19,26 @@ class Products extends StatelessWidget {
     );
   }
 
+  Widget _buildProductList(){
+    // Lets conditionally render the content dependening
+    // on the size of products (images)
+    Widget productCard;
+    if (products.length > 0){
+        productCard = ListView.builder(
+            itemBuilder: _buildProductItem,
+            itemCount: products.length,
+          );
+    }
+    else{
+        productCard = Center(child: Text("No images in the list add one  "));
+    }
+    return productCard;
+  }
+
   @override
   Widget build(BuildContext context) {
     //Conditional rendering
-    return products.length > 0
-        ? ListView.builder(
-            itemBuilder: _buildProductItem,
-            itemCount: products.length,
-          )
-        : Center(child: Text("No images in the list"));
+    return _buildProductList();
   }
 }
+ 
